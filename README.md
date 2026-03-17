@@ -1,24 +1,27 @@
-TMF: Topology-Aware Multi-Information Fusion for Object Recognition
+# TMF: Topology-Aware Multi-Information Fusion for Object Recognition
 
 This repository provides the core implementation of the TMF (Topology-Aware Multi-Information Fusion) model.
 
+---
 
-Training
+## Training
 
-
-python train.py --model tmf --batch_size 32 --npoint 4096 --num_classes 13 --input_channels 9
-```
-
-Testing
-
-
-python test.py --log_dir <experiment_folder> --num_point 4096 --num_classes 13
+```bash
+python train.py --model tmf --batch_size 8 --npoint 2048 --num_classes 13 --input_channels 6
 ```
 
 ---
 
-Code Availability
+## Testing
 
-The code is publicly available:
+```bash
+python test.py --log_dir <experiment_folder> --num_point 2048 --num_classes 13
+```
 
-GitHub: https://github.com/wang-yh-666/TMF
+---
+
+## Notes
+
+This repository provides a cleaned implementation of the TMF model.
+
+Due to differences in hardware environments, training configurations, and random initialization, the reproduced results may vary from those reported in the paper.
