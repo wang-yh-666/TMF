@@ -7,7 +7,7 @@ This repository provides the core implementation of the TMF (Topology-Aware Mult
 ## Training
 
 ```bash
-python train.py --model tmf --batch_size 8 --npoint 2048 --num_classes 13 --input_channels 6
+python train.py --model tmf --batch_size 8 --npoint 2048 --num_classes 13 --input_channels 9
 ```
 
 ---
