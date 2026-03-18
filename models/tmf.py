@@ -147,8 +147,8 @@ class EnhancingFeatureModule(nn.Module):
 
         # Transform xyz
         trans = self.input_tnet(xyz)         # [B,3,3]
-        # xyz_trans = torch.bmm(trans, xyz)    # [B,3,N]
-        xyz_trans = xyz
+        xyz_trans = torch.bmm(trans, xyz)    # [B,3,N]
+
 
         xyz_t = xyz_trans.transpose(1, 2).contiguous()   # [B,N,3]
         feat_t = x.transpose(1, 2).contiguous()          # [B,N,C]
@@ -396,7 +396,7 @@ class get_model(nn.Module):
         l1_points = self.atm_l1(l1_xyz, l1_points)
 
         l0_points = self.fp1(l0_xyz, l1_xyz, l0_skip, l1_points)    # [B,128,N]
-        # l0_points = self.atm_l0(l0_xyz, l0_points)
+        l0_points = self.atm_l0(l0_xyz, l0_points)
 
 
         rgb_feat = self.rgb_extractor(l0_rgb)                        # [B,128,N]
